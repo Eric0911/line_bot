@@ -85,6 +85,10 @@ def handle_message(event):
             bot_msg = faq[user_msg]
         elif user_msg.lower() in ["menu", "選單", "主選單", "首頁"]:
             bot_msg = menu
+        elif user_msg.lower() in ["creator", "創造者"]:
+            bot_msg = TextMessage(text="The creator of this chatbot is wei-liang, lin.")
+        elif user_msg.lower() in ["target", "目標"]:
+            bot_msg = TextMessage(text="短期（2025~2026）：加強編程技能，參與專案或開源社群，為轉職軟體工程師做準備。\n中期（2026~2027）：專注於英語學習，準備多益金牌證書。\n長期（2027~）：逐步學習3D建模工具（如Blender、Maya），並開始設計紀念品、健身和經營youtube。")
         elif user_msg in table:
             buy = table[user_msg]["buy"]
             sell = table[user_msg]["sell"]
