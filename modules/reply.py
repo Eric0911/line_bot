@@ -25,7 +25,7 @@ faq = {
         text="我們的營業時間是週一至週五 9:00~18:00"
     ),
     "聯絡電話": TextMessage(
-        text="02-33664888#259"
+        text="0910232928"
     ),
     "觀看照片": ImageMessage(
         original_content_url="https://fastly.picsum.photos/id/395/900/400.jpg?hmac=3y0-Ce1YyrujBAT9q2_GVXqC3CIgTSxPOKoLHlmspr0",
@@ -42,16 +42,16 @@ faq = {
                           ])
                           ),
     "捷運": TextMessage(
-        text="搭乘捷運至木柵線科技大樓站步行5分鐘即可抵達。"
+        text="目前捷運尚未完工。"
     ),
     "公車": TextMessage(
-        text="搭乘公車至科技大樓站步行5分鐘即可抵達。"
+        text="從桃園火車站搭乘公車15分鐘即可抵達。"
     ),
     "營業地址": LocationMessage(
-        title="地址標題",
-        address="地址副標題",
-        latitude=35.65910807942215,
-        longitude=139.70372892916203
+        title="HOLA 和樂家居 桃園八德店",
+        address="334桃園市八德區介壽路一段479號2樓",
+        latitude=24.9688037,
+        longitude=121.299111
     ),
     "查詢匯率": TemplateMessage(
         alt_text="Carousel template",
@@ -60,7 +60,7 @@ faq = {
                 CarouselColumn(
                     # 匯率選單一圖片網址
                     thumbnail_image_url="https://fastly.picsum.photos/id/352/900/400.jpg?hmac=WTGHcbEoO0_hYEWOE7qNwdFmPC-D7czQpegOKNqpZ0M",
-                    title="匯率選單一",
+                    title="匯率-1",
                     text="點選下方按鈕查詢即時匯率",
                     actions=[
                         MessageAction(
@@ -80,7 +80,7 @@ faq = {
                 CarouselColumn(
                     # 匯率選單二圖片網址
                     thumbnail_image_url="https://fastly.picsum.photos/id/364/900/400.jpg?hmac=70RqcdkXgO-mMYyuGgaFXlB0twshHiFdvzgGhAOZggw",
-                    title="匯率選單二",
+                    title="匯率-2",
                     text="點選下方按鈕查詢即時匯率",
                     actions=[
                         MessageAction(
@@ -100,7 +100,7 @@ faq = {
                 CarouselColumn(
                     # 匯率選單三圖片網址
                     thumbnail_image_url="https://fastly.picsum.photos/id/355/900/400.jpg?hmac=G2DG7Nfhf-KOUh0nSEYX7fO7TeC0zN7pkCRkb2Nj0M4",
-                    title="匯率選單三",
+                    title="匯率-3",
                     text="點選下方按鈕查詢即時匯率",
                     actions=[
                         MessageAction(
@@ -140,12 +140,12 @@ menu = TemplateMessage(
                         text="查詢匯率"
                     ),
                     MessageAction(
-                        label="營業時間",
-                        text="營業時間"
+                        label="查詢股價",
+                        text="查詢股價"
                     ),
                     MessageAction(
-                        label="營業地址",
-                        text="營業地址"
+                        label="功能尚未完成",
+                        text="功能尚未完成"
                     )
                 ]
             ),
@@ -156,9 +156,25 @@ menu = TemplateMessage(
                 text="點選下方按鈕開始互動",
                 actions=[
                     MessageAction(
+                        label="營業時間",
+                        text="營業時間"
+                    ),
+                    MessageAction(
+                        label="營業地址",
+                        text="營業地址"
+                    ),
+                    MessageAction(
                         label="交通方式",
                         text="交通方式"
-                    ),
+                    )
+                ]
+            ),
+            CarouselColumn(
+                # 卡片二圖片網址
+                thumbnail_image_url="https://fastly.picsum.photos/id/355/900/400.jpg?hmac=G2DG7Nfhf-KOUh0nSEYX7fO7TeC0zN7pkCRkb2Nj0M4",
+                title="主選單三",
+                text="點選下方按鈕開始互動",
+                actions=[
                     MessageAction(
                         label="觀看照片",
                         text="觀看照片"
@@ -166,6 +182,10 @@ menu = TemplateMessage(
                     URIAction(
                         label="官方網站",
                         uri="https://train.csie.ntu.edu.tw/train/"
+                    ),
+                    MessageAction(
+                        label="功能尚未完成",
+                        text="功能尚未完成"
                     )
                 ]
             )

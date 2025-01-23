@@ -29,3 +29,7 @@ OPENAI_API_KEY=
 git config --global user.name 你的使用者名稱
 git config --global user.email 你的Email
 ```
+
+## 20250122補充說明
+如果我要試驗本地端的程式狀況，在line機器人後台的Webhook URL 變更網址為https://ad2b-2001-b400-e3d8-aef0-20b0-80dc-ab1e-7721.ngrok-free.app
+如果我要改用上傳到網路上的程式則用https://line-bot-ki1a.onrender.com
