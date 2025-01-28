@@ -198,7 +198,7 @@ menu = TemplateMessage(
             ),
             CarouselColumn(
                 # 卡片二圖片網址
-                thumbnail_image_url="https://fastly.picsum.photos/id/355/900/400.jpg?hmac=G2DG7Nfhf-KOUh0nSEYX7fO7TeC0zN7pkCRkb2Nj0M4",
+                thumbnail_image_url="https://fastly.picsum.photos/id/352/900/400.jpg?hmac=WTGHcbEoO0_hYEWOE7qNwdFmPC-D7czQpegOKNqpZ0M",
                 title="主選單二",
                 text="點選下方按鈕開始互動",
                 actions=[
@@ -218,7 +218,7 @@ menu = TemplateMessage(
             ),
             CarouselColumn(
                 # 卡片二圖片網址
-                thumbnail_image_url="https://fastly.picsum.photos/id/352/900/400.jpg?hmac=WTGHcbEoO0_hYEWOE7qNwdFmPC-D7czQpegOKNqpZ0M",
+                thumbnail_image_url="https://fastly.picsum.photos/id/355/900/400.jpg?hmac=G2DG7Nfhf-KOUh0nSEYX7fO7TeC0zN7pkCRkb2Nj0M4",
                 title="主選單三",
                 text="點選下方按鈕開始互動",
                 actions=[

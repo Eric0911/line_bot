@@ -40,11 +40,11 @@ def get_stock_info():
     param_list = []
     for stock_id in stock_id_list:
         param_list.append(f"tse_{stock_id}.tw")
-    print(param_list)
+    # print(param_list)
     param = "|".join(param_list)
-    print(param)
+    # print(param)
     url = f"https://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch={param}&json=1&delay=0"
-    print(url)
+    # print(url)
     res = requests.get(url)
     data = res.json()["msgArray"]
     stock_list = {}
