@@ -101,20 +101,20 @@ def handle_message(event):
             volume = stock[user_msg]["volume"]
             date = stock[user_msg]["date"]
             bot_msg = TextMessage(text=f"{user_msg}\n代號:{id}\n價格:{price}\n漲跌幅:{change}\n成交量:{volume}\n日期:{date}\n資料來源:臺灣證券交易所")
-        else:
-            completion = client.chat.completions.create(
-                model="gpt-4o-mini",
-                messages=[
-                    {"role": "system", "content": "You are a helpful assistant."},
-                    {
-                        "role": "user",
-                        #content把輸入資料改成bot_msg
-                        "content": user_msg
-                    }
-                ]
-            )
-            AI_reply = completion.choices[0].message.content
-            bot_msg = TextMessage(text = AI_reply)
+        # else:
+        #     completion = client.chat.completions.create(
+        #         model="gpt-4o-mini",
+        #         messages=[
+        #             {"role": "system", "content": "You are a helpful assistant."},
+        #             {
+        #                 "role": "user",
+        #                 #content把輸入資料改成bot_msg
+        #                 "content": user_msg
+        #             }
+        #         ]
+        #     )
+        #     AI_reply = completion.choices[0].message.content
+        #     bot_msg = TextMessage(text = AI_reply)
         
         line_bot_api.reply_message_with_http_info(
             ReplyMessageRequest(
