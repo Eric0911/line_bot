@@ -99,8 +99,8 @@ def handle_message(event):
             price = stock[user_msg]["price"]
             change = stock[user_msg]["change"]
             volume = stock[user_msg]["volume"]
-            date = stock[user_msg]["date"]
-            bot_msg = TextMessage(text=f"{user_msg}\n代號:{id}\n價格:{price}\n漲跌幅:{change}\n成交量:{volume}\n日期:{date}\n資料來源:臺灣證券交易所")
+            # date = stock[user_msg]["date"]
+            bot_msg = TextMessage(text=f"{user_msg}\n代號:{id}\n價格:{price}\n漲跌幅:{change}\n成交量:{volume}\n資料來源:臺灣證券交易所")
         else:
             completion = client.chat.completions.create(
                 model="gpt-4o-mini",

@@ -1,6 +1,6 @@
 from pyquery import PyQuery
 import requests
-import moment
+# import moment
 
 #取得匯率
 def get_exchange_table():
@@ -56,14 +56,14 @@ def get_stock_info():
             # 相減後四捨五入到小數點第2位
             change = round( price - float(d["y"]), 2)
             origin_time = d["d"] + " " + d["t"]
-            date = moment.date(origin_time, "YYYYMMDD HH:mm:ss").format("YYYY/MM/DD HH:mm:ss")
+            # date = moment.date(origin_time, "YYYYMMDD HH:mm:ss").format("YYYY/MM/DD HH:mm:ss")
             name = d["n"]
             stock_list[name] = {
                 "id": d["c"],
                 "price": price,
                 "change": change,
                 "volume": int(d["v"]),
-                "date": date
+                # "date": date
             }
         except:
             # 如果 try 中有錯誤...
