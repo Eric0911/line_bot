@@ -26,7 +26,7 @@ from linebot.v3.webhooks import (
 import os
 
 from modules.reply import faq, menu
-from modules.currency import get_exchange_table
+from modules.currency import get_exchange_table, get_stock_info
 
 from openai import OpenAI
 #導入OpenAI需要API Key
@@ -34,7 +34,8 @@ client = OpenAI(
     api_key = os.getenv("OPENAI_API_KEY")
 )
 
-table = get_exchange_table()
+exchange = get_exchange_table()
+stock = get_stock_info()
 
 app = Flask(__name__)
 
@@ -89,10 +90,17 @@ def handle_message(event):
             bot_msg = TextMessage(text="The creator of this chatbot is wei-liang, lin.")
         elif user_msg.lower() in ["target", "目標"]:
             bot_msg = TextMessage(text="25年轉職軟體工程師\n26年考到多益金牌\n27年開始做紀念品、健身、繪圖型YouTuber")
-        elif user_msg in table:
-            buy = table[user_msg]["buy"]
-            sell = table[user_msg]["sell"]
+        elif user_msg in exchange:
+            buy = exchange[user_msg]["buy"]
+            sell = exchange[user_msg]["sell"]
             bot_msg = TextMessage(text=f"{user_msg}\n買價:{buy}\n賣價:{sell}\n資料來源:以台灣銀行匯率牌價公告為主")
+        elif user_msg in stock:
+            id = stock[user_msg]["id"]
+            price = stock[user_msg]["price"]
+            change = stock[user_msg]["change"]
+            volume = stock[user_msg]["volume"]
+            date = stock[user_msg]["date"]
+            bot_msg = TextMessage(text=f"{user_msg}\n代號:{id}\n價格:{price}\n漲跌幅:{change}\n成交量:{volume}\n日期:{date}\n資料來源:臺灣證券交易所")
         else:
             completion = client.chat.completions.create(
                 model="gpt-4o-mini",

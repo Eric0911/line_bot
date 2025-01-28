@@ -45,7 +45,7 @@ faq = {
         text="目前捷運尚未完工。"
     ),
     "公車": TextMessage(
-        text="從桃園火車站搭乘公車15分鐘即可抵達。"
+        text="從桃園火車站搭乘5096、5008、5044等公車20分鐘內，即可抵達。"
     ),
     "營業地址": LocationMessage(
         title="HOLA 和樂家居 桃園八德店",
@@ -119,6 +119,53 @@ faq = {
                 )
             ]
         )
+    ),
+    "查詢股價": TemplateMessage(
+        alt_text="Carousel template",
+        template=CarouselTemplate(
+            columns=[
+                CarouselColumn(
+                    # 匯率選單一圖片網址
+                    thumbnail_image_url="https://fastly.picsum.photos/id/352/900/400.jpg?hmac=WTGHcbEoO0_hYEWOE7qNwdFmPC-D7czQpegOKNqpZ0M",
+                    title="股票-1",
+                    text="點選下方按鈕查詢即時股價",
+                    actions=[
+                        MessageAction(
+                            label="查詢台積電(2330)",
+                            text="台積電"
+                        ),
+                        MessageAction(
+                            label="查詢鴻海(2317)",
+                            text="鴻海"
+                        ),
+                        MessageAction(
+                            label="查詢元大台灣卓越50(0050)",
+                            text="元大台灣50"
+                        )
+                    ]
+                ),
+                CarouselColumn(
+                    # 匯率選單二圖片網址
+                    thumbnail_image_url="https://fastly.picsum.photos/id/364/900/400.jpg?hmac=70RqcdkXgO-mMYyuGgaFXlB0twshHiFdvzgGhAOZggw",
+                    title="股票-2",
+                    text="點選下方按鈕查詢即時股價",
+                    actions=[
+                        MessageAction(
+                            label="查詢聯發科(2454)",
+                            text="聯發科"
+                        ),
+                        MessageAction(
+                            label="查詢中華電(2412)",
+                            text="中華電"
+                        ),
+                        MessageAction(
+                            label="查詢元大臺灣高股息(0056)",
+                            text="元大高股息"
+                        )
+                    ]
+                )
+            ]
+        )
     )
 }
 
@@ -171,7 +218,7 @@ menu = TemplateMessage(
             ),
             CarouselColumn(
                 # 卡片二圖片網址
-                thumbnail_image_url="https://fastly.picsum.photos/id/355/900/400.jpg?hmac=G2DG7Nfhf-KOUh0nSEYX7fO7TeC0zN7pkCRkb2Nj0M4",
+                thumbnail_image_url="https://fastly.picsum.photos/id/352/900/400.jpg?hmac=WTGHcbEoO0_hYEWOE7qNwdFmPC-D7czQpegOKNqpZ0M",
                 title="主選單三",
                 text="點選下方按鈕開始互動",
                 actions=[
